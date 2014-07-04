@@ -1,0 +1,39 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+name: VELMA
+scopeName: source.velma
+fileTypes: [velma]
+uuid: 80bee9e8-acd5-44ac-b7b2-6cae65dac594
+
+patterns:
+- name: entity.name.tag.contents.velma
+  match: (?i)(@|(\((?=R[0-7]\))))(R[0-7])(\))?
+
+- name: variable.parameter.register.velma
+  match: \b(?i)(R[0-7])\b
+
+- name: variable.parameter.memory.velma
+  match: \b[0-7]+\b
+
+- name: keyword.control.velma
+  match: (?i)(\.ORG|\.WORD|\.BLK|ADD(#)?|SUB|MUL|DIV|CMP|TST|BIT|MOV(#|@)?|(@)?MOV|ASHR|LSHR|LSHL|CLR|INC|DEC|BIC|BIS|BIF|JUMP(@)?|JSR|RTS|RTI|BR|BNE|BEQ|BGE|BLT|BVC|BVS|BCC|BCS|BGT|BLE|HALT|NOP)
+
+- name: comment.velma
+  match: (\s)*;.*$
+
+- name: constant.numeric.octal.velma
+  match: '#[0-7]+\b'
+
+- name: string.velma
+  match: ("|').*?("|')
+
+- name: entity.name.function.velma
+  match: ^\w+(?=:)
+
+- name: entity.name.function.velma
+  match: (?<=(B(NE|EQ|GE|LT|VC|VS|CC|CS|GT|LE))|JSR)\s+(\w+)
+
+- name: entity.name.function.velma
+  match: (?<=BR)\s+(\w+)
+
+- name: entity.name.function.velma
+  match: (?<=JUMP)\s+(\w+)
