@@ -15,7 +15,7 @@ patterns:
   match: \b[0-7]+\b
 
 - name: keyword.control.velma
-  match: (?i)(\.ORG|\.WORD|\.BLK|ADD(#)?|SUB|MUL|DIV|CMP|TST|BIT|MOV(#|@)?|(@)?MOV|ASHR|LSHR|LSHL|CLR|INC|DEC|BIC|BIS|BIF|JUMP(@)?|JSR|RTS|RTI|BR|BNE|BEQ|BGE|BLT|BVC|BVS|BCC|BCS|BGT|BLE|HALT|NOP)
+  match: (?i)(\.ORG|\.WORD|\.BLK|ADD(#)?|SUB|MUL|DIV|CMP|TST|BIT|MOV(#|@)?|(@)?MOV|ASHR|LSHR|LSHL|CLR|INC|DEC|BIC|BIS|BIF|JUMP(@)?|JSR|RTS|RTI|BR|BNE|BEQ|BGE|BLT|BVC|BVS|BCC|BCS|BGT|BLE|HALT|NOP)(?!\w+)(?!\w*:)
 
 - name: comment.velma
   match: (\s)*;.*$
